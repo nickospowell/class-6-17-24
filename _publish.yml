@@ -1,0 +1,4 @@
+- source: project
+  quarto-pub:
+    - id: f6d74675-1fff-4c65-8b98-b12d86e71c9e
+      url: 'https://nosp41.quarto.pub/north-dakota-income'

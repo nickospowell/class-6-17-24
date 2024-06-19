@@ -1,0 +1,28 @@
+---
+title: "Plot of income in north dakota"
+execute: 
+  echo: false
+---
+```{r}
+#| message: false
+#| label: setup
+
+library(tidyverse)
+library(tidycensus)
+```
+
+```{r}
+#| message: false
+nd_income <- get_acs( geography = "tract", variables = "B19013_001", state = "ND", geometry = TRUE, year = 2019 )
+```
+
+
+```{r}
+#| label: plot
+
+
+
+
+ggplot(nd_income, aes(fill = estimate, geometry = geometry)) + geom_sf() + scale_fill_viridis_c(name = "Median Household Income") + labs(title = "Median Household Income in North Dakota by Census Tract", caption = "Source: US Census Bureau ACS 2019") + theme_minimal()
+```
+
